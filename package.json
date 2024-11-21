@@ -5,14 +5,14 @@
         "fileName": "tc-store",
         "publish": {
             "name": "tc-store",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "description": "Simple, small and reactive state store",
             "repository": "https://github.com/theajack/store",
             "keywords": [],
             "author": "theajack",
             "license": "MIT",
             "bugs": {
-                "url": ""
+                "url": "https://github.com/theajack/store/issues"
             },
             "homepage": "https://github.com/theajack/store",
             "publishConfig": {
