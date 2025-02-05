@@ -1,3 +1,8 @@
+/*
+ * @Author: chenzhongsheng
+ * @Date: 2024-11-15 22:28:26
+ * @Description: Coding something
+ */
 import {isComputed} from './computed';
 import {GlobalStoreUseHistory} from './history';
 import {isJoin, watchJoin} from './join';
@@ -20,7 +25,7 @@ function watchBase (target: IWatchTarget, change: (v: any, prev: any)=>void, pur
     }
     if (typeof target === 'function') {
         watchFn = (store: IStoreDef, attr: string) => {
-            console.log('watch fn');
+            // console.log('watch fn');
             store.$sub(attr, () => {
                 if (pure) change(prev, prev);
                 else {

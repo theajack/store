@@ -1,0 +1,17 @@
+<!-- @dep = tc-store --> 
+<!-- @hideLog -->
+<!-- @desc = Persist storage -->
+
+<button id="button">Rerun</button>
+<div id="content"></div>
+<script>
+    import { createStorage } from 'tc-store';
+    const store = createStorage({
+        a: 1,
+        b: 'test',
+    });
+    store.a ++; 
+    store.b += '!'; 
+    $('#button').onclick = $run;
+    $('#content').innerText = `a = ${store.a}; b=${store.b}`;
+</script>

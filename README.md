@@ -7,6 +7,14 @@
 
 Simple, small and reactive state store
 
+[Playground](https://theajack.github.io/jsbox/?githubConfig=theajack.store)
+
+## Features
+
+- Light: 2.6kB gzip, 5.17kB min
+- Persist: Support save in localstorage
+- Simple to Use
+
 ## Install
 
 ```
@@ -49,6 +57,8 @@ watchPure(() => store.a + 1, () => {
 watchImme(() => store.a + 1, (v, p) => {
     console.log(`store.a + 1 imme change: cur=${v}; prev=${p}`);
 });
+
+store.a ++;
 ```
 
 ### StorageStore
@@ -87,15 +97,20 @@ const store = createStorage({
 Binding State with HTMLElement
 
 ```js
-import { store, bind, watchImme} from 'tc-store';
+import { createStore, bind, watchImme} from 'tc-store';
 const store = createStore({
     content: 'test',
 });
-const div = document.getElementById('div')!; // this is A Div
+const div = document.createElement('div');
 watchImme(store.content, (v) => {
     div.innerText = v;
 });
 
-const input = document.getElementById('input')!; // this is A Input Element(input, textarea, select, etc.)
+const input = document.createElement('input');
 bind(input, store.content); // This results in a two-way binding
+
+document.body.append(div);
+document.body.append(input);
+
+store.content += '!';
 ```

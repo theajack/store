@@ -29,6 +29,9 @@ devDependencies:
   eslint:
     specifier: ^8.2.0
     version: registry.npmmirror.com/eslint@8.57.0
+  jsbox-cmd:
+    specifier: ^0.0.1
+    version: registry.npmjs.org/jsbox-cmd@0.0.1
   terser:
     specifier: ^5.16.8
     version: registry.npmmirror.com/terser@5.31.6
@@ -46,6 +49,13 @@ devDependencies:
     version: registry.npmmirror.com/vite@4.5.3(@types/node@22.4.0)(terser@5.31.6)
 
 packages:
+
+  registry.npmjs.org/jsbox-cmd@0.0.1:
+    resolution: {integrity: sha512-OK8knKp8SsL5VgakmJwZ47xFQBUO23EWW4HlSHKWmxG+p2N+vVZMtJhx7NhOgK/jWz3xwUYLkfZNErWfDn8LzQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmjs.org/jsbox-cmd/-/jsbox-cmd-0.0.1.tgz}
+    name: jsbox-cmd
+    version: 0.0.1
+    hasBin: true
+    dev: true
 
   registry.npmmirror.com/@ampproject/remapping@2.3.0:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ampproject/remapping/-/remapping-2.3.0.tgz}

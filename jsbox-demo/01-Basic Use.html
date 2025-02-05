@@ -1,0 +1,35 @@
+<!-- @dep = tc-store --> 
+<!-- @desc = Basic usage of tc-store -->
+
+<button id="button">Increase a</button>
+<script>
+    import { createStore, computed, watch, join, raw, watchPure, watchImme } from 'tc-store';
+    const store = createStore({
+        a: 1,
+        b: 'test',
+    });
+    $('#button').onclick = ()=>{
+        store.a ++;
+    }
+    const computed1 = computed(() => {
+        return store.a + store.b;
+    });
+    watch(store.a, (v, p) => {
+        console.log(`a change: cur=${v}; prev=${p}`);
+    });
+    watch(computed1, (v, p) => {
+        console.log(`computed1 change: cur=${v}; prev=${p}`);
+    });
+    watch(() => store.a + 1, (v, p) => {
+        console.log(`store.a + 1 change: cur=${v}; prev=${p}`);
+    });
+    watch(join`hello ${store.b} ${raw(1)} ${store.a}`, (v, p) => {
+        console.log(`join change: cur=${v}; prev=${p}`);
+    });
+    watchPure(() => store.a + 1, () => {
+        console.log(`store.a + 1 pure change`);
+    });
+    watchImme(() => store.a + 1, (v, p) => {
+        console.log(`store.a + 1 imme change: cur=${v}; prev=${p}`);
+    });
+</script>

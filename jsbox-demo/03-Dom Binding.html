@@ -1,0 +1,20 @@
+<!-- @dep = tc-store --> 
+<!-- @hideLog -->
+<!-- @desc = Dom binding usage -->
+
+<div id="content"></div>
+<input id="input"/>
+<button id="button">Add '!'</button>
+<script>
+    import { createStore, bind, watchImme} from 'tc-store';
+    const store = createStore({
+        content: 'test',
+    });
+    watchImme(store.content, (v) => {
+        $('#content').innerText = v;
+    });
+    bind($('#input'), store.content); // This results in a two-way binding
+    $('#button').onclick = () => {
+        store.content += '!';
+    }
+</script>
