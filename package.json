@@ -5,7 +5,7 @@
         "fileName": "tc-store",
         "publish": {
             "name": "tc-store",
-            "version": "0.0.3",
+            "version": "0.0.4",
             "description": "Simple, small and reactive state store",
             "repository": "https://github.com/theajack/store",
             "keywords": [],

@@ -6,10 +6,12 @@
 import {UserConfig, defineConfig} from 'vite';
 import {babel} from '@rollup/plugin-babel';
 import {resolve} from 'path';
-import {version, ebuild, dependencies} from './package.json';
+import pkg from './package.json';
 import {execSync} from 'child_process';
 import upfs from 'up-fs';
 import {writeFileSync} from 'fs';
+
+const {version, ebuild, dependencies = {}} = pkg;
 
 const fileName = ebuild.fileName || ebuild.publish.name;
 const pubVersion = ebuild.publish.version || version;
