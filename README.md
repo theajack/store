@@ -7,7 +7,7 @@
 
 Simple, small and reactive state store
 
-[Playground](https://theajack.github.io/jsbox/?githubConfig=theajack.store)
+[Playground](https://theajack.github.io/jsbox/?config=theajack.store)
 
 ## Features
 
